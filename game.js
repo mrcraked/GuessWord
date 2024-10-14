@@ -166,6 +166,7 @@ function showHintPopup() {
 
 function updateGuessesLeftDisplay() {
     guessesLeftDisplay.textContent = `${guessesLeft}/3`;
+    console.log(Error)
 }
 
 function showAlert(message, type) {
