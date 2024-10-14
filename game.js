@@ -22,9 +22,7 @@ playAudioButton.addEventListener('click', playAudio);
 submitGuessButton.addEventListener('click', submitGuess);
 hintButton.addEventListener('click', showHintPopup);
 
-function updateGuessesLeftDisplay() {
-    guessesLeftDisplay.textContent = `${guessesLeft}/3`;
-}
+
 
 async function startGame() {
     startButton.classList.add('hidden');
@@ -78,6 +76,7 @@ function submitGuess() {
     if (guess === currentWord) {
         endRound(true);
     } else {
+        updateGuessesLeftDisplay()
         guessesLeft--;
         if (guessesLeft === 0) {
             endRound(false);
@@ -163,6 +162,10 @@ function showHintPopup() {
         }
         startTimer();
     });
+}
+
+function updateGuessesLeftDisplay() {
+    guessesLeftDisplay.textContent = `${guessesLeft}/3`;
 }
 
 function showAlert(message, type) {
