@@ -76,8 +76,8 @@ function submitGuess() {
     if (guess === currentWord) {
         endRound(true);
     } else {
-        updateGuessesLeftDisplay()
         guessesLeft--;
+        updateGuessesLeftDisplay()
         if (guessesLeft === 0) {
             endRound(false);
         }
